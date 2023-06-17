@@ -7,13 +7,13 @@ body {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  color: #D9D9D9;
+  color: #d9d9d9;
   background-color: #262626;
 }
 .header {
   width: auto;
   height: 15vh;
-  background-color:#0D0D0D;
+  background-color: #0d0d0d;
   border-radius: 0px 0px 5px 5px;
   text-align: center;
   font-size: 45px;
@@ -23,110 +23,118 @@ body {
   align-items: center;
 }
 .content {
-    width: 100vw;
-    height: 65vh;
-    display: flex;
+  width: 100vw;
+  height: 65vh;
+  display: flex;
 }
 .contentLeft {
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
 }
 .contentMid {
-    width: 40vw;
-    background-color: #595959;
-    border-radius: 25px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 40vw;
+  background-color: #595959;
+  border-radius: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.alert {
+  text-align: center;
 }
 .contentRight {
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
 }
 .img {
-    width: 5vw;
-    height: auto;
+  width: 5vw;
+  height: auto;
 }
+.enemy-container,
 .image-container {
-    width: 150px; /* Set the initial width of the container */
-    height: 150px; /* Set the initial height of the container */
-    overflow: hidden; /* Ensure that the image does not overflow the container */
-    transition: width 0.3s ease, height 0.3s ease; /* Add a smooth transition effect */
-  }
-  
-  .image-container:hover {
-    width: 200px; /* Set the expanded width of the container */
-    height: 200px; /* Set the expanded height of the container */
-  }
-  
-  .image-container img {
-    width: 100%; /* Ensure that the image fills the container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  .image-container:hover img {
-    filter: drop-shadow(0 0 5px yellow);
-  }
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+.enemy-container:hover,
+.image-container:hover {
+  width: 200px;
+  height: 200px;
+}
+.enemy-container img,
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
 
+.image-container:hover img {
+  filter: drop-shadow(0 0 5px yellow);
+}
+.enemy-container:hover img {
+  filter: drop-shadow(0 0 5px red);
+}
 
 .clTop,
 .crTop {
-    height: 30vh;
-    margin-top: 5px;
-    display: flex;
-    align-self: center;
+  height: 30vh;
+  margin-top: 5px;
+  display: flex;
+  align-self: center;
 }
 .clBot,
 .crBot {
-    height: 35vh;
-    display: flex;
-    align-self: center;
-    margin-bottom: 150px;
+  height: 35vh;
+  display: flex;
+  align-self: center;
+  margin-bottom: 150px;
 }
-
-
-
-
-
-
-
-
-
 
 .footer {
-    width: 100vw;
-    height: 20vh;
-    background-color: #0D0D0D;
-    display: flex;
+  width: 100vw;
+  height: 20vh;
+  background-color: #0d0d0d;
+  display: flex;
 }
 .footerHeading {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .attributionList {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 a {
   text-decoration: none;
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 a:visited {
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 li {
   list-style-type: none;
 }
 
 .inverted-image {
-    transform: scaleX(-1);
-  }
+  transform: scaleX(-1);
+}
+button {
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-top: 30px;
+}
+
+.playing {
+    transform: scale(1.10);
+  filter: drop-shadow(0 0 5px red);
+}

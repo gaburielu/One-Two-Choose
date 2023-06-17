@@ -19,40 +19,40 @@
             <h1 class="computer" style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Computer</h1>
 
             <div class="clTop">
-                <div class="image-container">
-                    <img src="/img/scissors.png" alt="Image">
+                <div class="enemy-container">
+                    <img src="/img/scissors.png" alt="Image" class="key" id="scissorE">
                   </div>
             </div>
             <div class="clBot">
-                <div class="image-container">
-                    <img src="/img/paper.png" alt="Image">
+                <div class="enemy-container">
+                    <img src="/img/paper.png" alt="Image" class="key" id="paperE">
                   </div>
-                  <div class="image-container">
-                    <img src="/img/rock.png" alt="Image">
+                  <div class="enemy-container">
+                    <img src="/img/rock.png" alt="Image" class="key" id="rockE">
                   </div>
             </div>
 
         </div>
         <div class="contentMid">
-            <h3 class="alert">First to score 5 points wins the game!</h3>
-            <p class="score">Current Score </p>
-            <p>Player Score: <span class="playerScore">?</span> Computer Score: <span class="compScore">?</span></p>
-            <button class="resetGame">Restart?</button>
+            <h2 class="alert">First to score 5 points wins the game!</h2>
+            <h3 class="score">Current Score </h3>
+            <p class="scoreBoard">Player Score: <span class="playerScore">?</span> Computer Score: <span class="compScore">?</span></p>
+            <button class="resetGame">Reset Game?</button>
         </div>
         <div class="contentRight">
             <h1 class="player" style="text-align: center;font-family: Arial, Helvetica, sans-serif;">You</h1>
 
             <div class="crTop">
                 <div class="image-container">
-                    <img src="/img/scissors.png" alt="Image" class="inverted-image">
+                    <img src="/img/scissors.png" alt="Image" class="inverted-image choice" id="scissor">
                   </div>
             </div>
             <div class="crBot">
                 <div class="image-container">
-                    <img src="/img/paper.png" alt="Image">
+                    <img src="/img/paper.png" alt="Image" class="choice" id="paper">
                   </div>
                   <div class="image-container">
-                    <img src="/img/rock.png" alt="Image">
+                    <img src="/img/rock.png" alt="Image" class="choice" id="rock">
                   </div>
             </div>
             
@@ -72,5 +72,9 @@
           <li><a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a></li>
         </ul>
     </div>
+    <!-- vn stands for voice note -->
+    <audio src="./img/tink.wav" id="vn1"></audio> 
+    <audio src="./img/boom.wav" id="vn2"></audio>
+    <audio src="./img/snare.wav" id="vn3"></audio> 
   </body>
 </html>

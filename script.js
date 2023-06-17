@@ -1,106 +1,139 @@
+let rock = document.getElementById("rock");
+let paper = document.getElementById("paper");
+let scissor = document.getElementById("scissor");
+let rockE = document.getElementById("rockE");
+let paperE = document.getElementById("paperE");
+let scissorE = document.getElementById("scissorE");
+const vn1 = document.getElementById("vn1");
+const vn2 = document.getElementById("vn2");
+const vn3 = document.getElementById("vn3");
+const choices = document.querySelectorAll(".choice");
+const keys = document.querySelectorAll(".key");
+let isFunctionEnabled = true;
 
+let text = document.querySelector(".alert");
+let scoreBoard = document.querySelector(".scoreBoard");
+let resetBtn = document.querySelector("button");
 
+let playerScore = 0;
+let compScore = 0;
 
+choices.forEach((choice) => {
+  choice.addEventListener("click", handleChoice);
+});
 
+function handleChoice(event) {
+  if (isFunctionEnabled) {
+    const playerChoice = event.target.id;
+    const playerChoiceInt = getPlayerChoiceInt(playerChoice);
+    const compChoiceInt = getCompChoice();
+    console.log(playerChoiceInt);
+    console.log(compChoiceInt);
+    playGame(playerChoiceInt, compChoiceInt);
+  }
+}
 
+function getPlayerChoiceInt(playerChoice) {
+  if (playerChoice === "rock") {
+    return 1;
+  } else if (playerChoice === "paper") {
+    return 2;
+  } else {
+    return 3;
+  }
+}
 
+resetBtn.addEventListener("click", function () {
+  playerScore = 0;
+  compScore = 0;
+  updateText("Game Restarted!");
+  updateScore(0, 0);
+  isFunctionEnabled = true;
+});
 
+function updateText(string) {
+  text.textContent = string;
+}
 
+function updateScore(ps, cs) {
+  scoreBoard.textContent = `Player Score: ${ps} Computer Score: ${cs}`;
+}
 
+function playGame(playerChoice, compChoice) {
+  if (compChoice == playerChoice) {
+    updateText("Its a Tie!");
+    checkWinCondition();
+    return "its a TIE!";
+  } else if (
+    (playerChoice == 1 && compChoice == 3) ||
+    (playerChoice == 2 && compChoice == 1) ||
+    (playerChoice == 3 && compChoice == 2)
+  ) {
+    updateText("You Win!");
+    playerScore++;
+    updateScore(playerScore, compScore);
+    checkWinCondition();
+    return "you WIN!";
+  } else {
+    updateText("You Lose!");
+    compScore++;
+    updateScore(playerScore, compScore);
+    checkWinCondition();
+    return "you LOSE!";
+  }
+}
 
+function checkWinCondition() {
+  if (playerScore == 5) {
+    updateText("Game Ended, you have won this round!");
+    resetBtn.textContent = "Play Again?";
+    disableFunction();
+  } else if (compScore == 5) {
+    updateText("Game Ended, you have lost this round!");
+    resetBtn.textContent = "Play Again?";
+    disableFunction();
+  } else {
+    resetBtn.textContent = "Reset Game?";
+  }
+}
 
+function disableFunction() {
+  isFunctionEnabled = false;
+}
 
+rock.addEventListener("click", function () {
+  vn1.currentTime = 0;
+  vn1.play();
+});
 
+paper.addEventListener("click", function () {
+  vn2.currentTime = 0;
+  vn2.play();
+});
 
+scissor.addEventListener("click", function () {
+  vn3.currentTime = 0;
+  vn3.play();
+});
 
+function getCompChoice() {
+  let value = Math.floor(Math.random() * 3) + 1;
+  if (value == 1) {
+    rockE.classList.add("playing");
+    return value;
+  } else if (value == 2) {
+    paperE.classList.add("playing");
+    return value;
+  } else {
+    scissorE.classList.add("playing");
+    return value;
+  }
+}
 
+function removeTransition(e) {
+  if (e.propertyName !== "transform") return;
+  console.log(this);
+  this.classList.remove("playing");
+}
 
-
-
-
-
-
-
-
-
-
-
-// function getPlayerChoice() {
-//   let validOption = true;
-//   while (validOption) {
-//     let foo = prompt("Type between Rock, Paper or Scissor");
-//     let fooCleaned = foo.trim().toUpperCase();
-//     if (fooCleaned == "ROCK") {
-//       alert("You choose Rock");
-//       return 1;
-//       validOption = false;
-//     } else if (fooCleaned == "PAPER") {
-//       alert("You choose Papyr");
-//       return 2;
-//       validOption = false;
-//     } else if (fooCleaned == "SCISSOR") {
-//       alert("YOu choose Scissor");
-//       return 3;
-//       validOption = false;
-//     } else {
-//       alert("Type a valid option");
-//     }
-//   }
-// }
-
-// function getCompChoice() {
-//   let foo = Math.floor(Math.random() * 3) + 1;
-//   if (foo == 1) {
-//     alert("Computer choose Rock");
-//     return foo;
-//   } else if (foo == 2) {
-//     alert("computer chooses Papyr");
-//     return foo;
-//   } else {
-//     alert("computer choose scissor.");
-//     return foo;
-//   }
-// }
-
-// function gamePlay() {
-//   let playerChoice = getPlayerChoice();
-//   let compChoice = getCompChoice();
-//   if (compChoice == playerChoice) {
-//     return "its a TIE!";
-//   } else if (
-//     (playerChoice == 1 && compChoice == 3) ||
-//     (playerChoice == 2 && compChoice == 1) ||
-//     (playerChoice == 3 && compChoice == 2)
-//   ) {
-//     return "you WIN!";
-//   } else {
-//     return "you LOSE!";
-//   }
-// }
-
-// function play() {
-//   let playerScore = 0;
-//   let compScore = 0;
-//   while (playerScore < 3 && compScore < 3) {
-//     let score = gamePlay();
-//     console.log(score);
-//     if (score == "you WIN!") {
-//       playerScore++;
-//       console.log(`Player Score: ${playerScore}`);
-//       console.log(`Computer Score: ${compScore}`);
-//     } else if (score == "you LOSE!") {
-//       compScore++;
-//       console.log(`Player Score: ${playerScore}`);
-//       console.log(`Computer Score: ${compScore}`);
-//     } else {
-//       console.log(`Player Score: ${playerScore}`);
-//       console.log(`Computer Score: ${compScore}`);
-//     }
-//   }
-//   if (playerScore == 3) {
-//     alert("YOU WIN THIS ROUND");
-//   } else {
-//     alert("YOU LOSE THIS ROUND");
-//   }
-// }
-// play();
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
