@@ -51,29 +51,29 @@ function gamePlay() {
   }
 }
 
-function play(){
-    let playerScore = 0;
-    let compScore = 0;
-    while (playerScore < 3 && compScore < 3){
-        let score = gamePlay();
-        console.log(score);
-        if(score == "you WIN!"){
-            playerScore++;
-            console.log(`Player Score: ${playerScore}`);
-            console.log(`Computer Score: ${compScore}`);
-        } else if (score == "you LOSE!"){
-            compScore++;
-            console.log(`Player Score: ${playerScore}`);
-            console.log(`Computer Score: ${compScore}`);
-        } else {
-            console.log(`Player Score: ${playerScore}`);
-            console.log(`Computer Score: ${compScore}`);
-        }
-    }
-    if (playerScore == 3){
-        alert("YOU WIN THIS ROUND");
+function play() {
+  let playerScore = 0;
+  let compScore = 0;
+  while (playerScore < 3 && compScore < 3) {
+    let score = gamePlay();
+    console.log(score);
+    if (score == "you WIN!") {
+      playerScore++;
+      console.log(`Player Score: ${playerScore}`);
+      console.log(`Computer Score: ${compScore}`);
+    } else if (score == "you LOSE!") {
+      compScore++;
+      console.log(`Player Score: ${playerScore}`);
+      console.log(`Computer Score: ${compScore}`);
     } else {
-        alert("YOU LOSE THIS ROUND");
+      console.log(`Player Score: ${playerScore}`);
+      console.log(`Computer Score: ${compScore}`);
     }
+  }
+  if (playerScore == 3) {
+    alert("YOU WIN THIS ROUND");
+  } else {
+    alert("YOU LOSE THIS ROUND");
+  }
 }
 play();
