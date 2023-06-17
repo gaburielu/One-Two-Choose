@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/icon.png"/>
+    <script src="script.js" defer></script>
     <title>Rock Paper and Scissor</title>
-</head>
-<body>
-<h1>Rock Paper Scissor</h1>
-    
-</body>
+  </head>
+  <body>
+    <div class="header">
+        <p>Rock Paper Scissors<p>
+
+    </div>
+
+    <div class="content">
+        <div class="contentLeft">
+            <h1 class="computer" style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Computer</h1>
+
+            <div class="clTop">
+                <div class="image-container">
+                    <img src="/img/scissors.png" alt="Image">
+                  </div>
+            </div>
+            <div class="clBot">
+                <div class="image-container">
+                    <img src="/img/paper.png" alt="Image">
+                  </div>
+                  <div class="image-container">
+                    <img src="/img/rock.png" alt="Image">
+                  </div>
+            </div>
+
+        </div>
+        <div class="contentMid">
+            <h3 class="alert">First to score 5 points wins the game!</h3>
+            <p class="score">Current Score </p>
+            <p>Player Score: <span class="playerScore">?</span> Computer Score: <span class="compScore">?</span></p>
+            <button class="resetGame">Restart?</button>
+        </div>
+        <div class="contentRight">
+            <h1 class="player" style="text-align: center;font-family: Arial, Helvetica, sans-serif;">You</h1>
+
+            <div class="crTop">
+                <div class="image-container">
+                    <img src="/img/scissors.png" alt="Image" class="inverted-image">
+                  </div>
+            </div>
+            <div class="crBot">
+                <div class="image-container">
+                    <img src="/img/paper.png" alt="Image">
+                  </div>
+                  <div class="image-container">
+                    <img src="/img/rock.png" alt="Image">
+                  </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="footer">
+    <div class="footerHeading">
+        <p class="">Copyright © 2023 <a href="https://github.com/Gaburielu">Gaburielu</a></p>
+        <a href="https://www.theodinproject.com/about">The Odin Project</a>
+    </div>
+      <div class="attribution">
+        <ul class="attributionList">
+          <li><a href="https://www.flaticon.com/free-icons/fist" title="fist icons">Fist icons created by Cap Cool - Flaticon</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/on-hold" title="on hold icons">On hold icons created by Cap Cool - Flaticon</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Cap Cool - Flaticon</a></li>
+          <li><a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a></li>
+        </ul>
+    </div>
+  </body>
 </html>

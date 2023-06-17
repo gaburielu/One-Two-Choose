@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  height: auto;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  color: #D9D9D9;
+  background-color: #262626;
+}
+.header {
+  width: auto;
+  height: 15vh;
+  background-color:#0D0D0D;
+  border-radius: 0px 0px 5px 5px;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+    width: 100vw;
+    height: 65vh;
+    display: flex;
+}
+.contentLeft {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+.contentMid {
+    width: 40vw;
+    background-color: #595959;
+    border-radius: 25px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contentRight {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+.img {
+    width: 5vw;
+    height: auto;
+}
+.image-container {
+    width: 150px; /* Set the initial width of the container */
+    height: 150px; /* Set the initial height of the container */
+    overflow: hidden; /* Ensure that the image does not overflow the container */
+    transition: width 0.3s ease, height 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  .image-container:hover {
+    width: 200px; /* Set the expanded width of the container */
+    height: 200px; /* Set the expanded height of the container */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ensure that the image fills the container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .image-container:hover img {
+    filter: drop-shadow(0 0 5px yellow);
+  }
+
+
+.clTop,
+.crTop {
+    height: 30vh;
+    margin-top: 5px;
+    display: flex;
+    align-self: center;
+}
+.clBot,
+.crBot {
+    height: 35vh;
+    display: flex;
+    align-self: center;
+    margin-bottom: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+.footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: #0D0D0D;
+    display: flex;
+}
+.footerHeading {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.attributionList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+a {
+  text-decoration: none;
+  color: #A6A6A6;
+}
+a:visited {
+  color: #A6A6A6;
+}
+li {
+  list-style-type: none;
+}
+
+.inverted-image {
+    transform: scaleX(-1);
+  }
